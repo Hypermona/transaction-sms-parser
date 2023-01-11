@@ -67,6 +67,9 @@ List<String> getProcessedMessage(dynamic message) {
 }
 
 String trimLeadingAndTrailingChars(String str) {
+  if (RegExp(r'[0-9]').allMatches(str).isEmpty) {
+    return "";
+  }
   String first = str[0];
   String last = str[str.length - 1];
   String finalStr =
