@@ -73,6 +73,7 @@ getTransactionType(dynamic message) {
   return minIndexMatch;
 }
 
+/// return { accountName, accountNumber, accountType, AvlBal, transactionAmt, transactionType};
 getTransactionInfo(String message) {
   List<String> processedMessage = getProcessedMessage(message);
   AccountInfo account = getAccount(processedMessage);
