@@ -57,7 +57,7 @@ getTransactionType(dynamic message) {
     matches['credit'] = creditPatternMatch.first.start;
   }
   var miscPatternMatch = miscPattern.allMatches(messageStr);
-  if (miscPatternMatch.isNotEmpty) {
+  if (matches.isEmpty && miscPatternMatch.isNotEmpty) {
     matches["debit"] = debitPatternMatch.first.start;
   }
 
