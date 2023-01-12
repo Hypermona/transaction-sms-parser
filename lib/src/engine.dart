@@ -1,5 +1,7 @@
+
 import 'accounts.dart';
 import 'balance.dart';
+import 'date.dart';
 import 'types.dart';
 import 'utils.dart';
 
@@ -92,7 +94,7 @@ getTransactionInfo(String message) {
         message: processedMessage,
         keyWordType: BalanceKeyWordsType.OUTSTANDING);
   }
-
+  DateTime? transactionDate = getTransactionDate(message);
   // return {
   //   account,
   //   balance,
@@ -105,6 +107,7 @@ getTransactionInfo(String message) {
     "accountType": account.type?.name,
     "AvlBal": balance.available,
     "transactionAmt": transactionAmount,
-    "transactionType": transactionType
+    "transactionType": transactionType,
+    "transactionDate": transactionDate,
   };
 }

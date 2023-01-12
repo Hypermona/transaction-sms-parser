@@ -7,5 +7,6 @@ export 'src/engine.dart';
 export 'src/accounts.dart' show getAccount;
 export 'src/balance.dart' show getBalance;
 export 'src/utils.dart' show cleanMessages;
+export 'src/date.dart';
 
 // TODO: Export any libraries intended for clients of this package.

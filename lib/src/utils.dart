@@ -92,3 +92,15 @@ padCurrencyValue(String balance) {
   List<String?> temp = balance.split('.');
   return '${temp[0]}.${(temp[1] ?? '').padRight(2, '0')}';
 }
+/// retrun UTC date and time
+getFormatedDateandTime(int year, [
+  int month = 1,
+  int day = 1,
+  int hour = 0,
+  int minute = 0,
+  int second = 0,
+  int millisecond = 0,
+  int microsecond = 0,
+]){
+return DateTime.utc(year,month,day,hour,minute,second,millisecond,microsecond);
+}

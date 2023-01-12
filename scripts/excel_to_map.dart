@@ -22,6 +22,7 @@ Future<List<Map<String,dynamic>>> excelToMap(String excelFilePath) async {
         "transactionType": row[6]?.value.toString(),
         "AvlBal": row[7]?.value.toString(),
         "balanceOutstanding": row[8]?.value.toString(),
+        "transactionDate": DateTime.tryParse(row[9]?.value.toString()?? "")
       };
       sample.add(temp);
     }

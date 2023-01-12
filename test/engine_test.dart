@@ -1,6 +1,7 @@
 import '../scripts/excel_to_map.dart';
 import 'package:transaction_sms_parser/transaction_sms_parser.dart';
 import 'package:test/test.dart';
+import '../testData/dates_sample.dart' show datesSample;
 
 String excelFilePath = "scripts/samples.xlsx";
 
@@ -16,7 +17,17 @@ void main() async {
         expect(result['AvlBal'], equals(element["AvlBal"]));
         expect(result['transactionAmt'], equals(element["transactionAmt"]));
         expect(result['transactionType'], equals(element["transactionType"]));
+        expect(result['transactionDate'], equals(element["transactionDate"]));
       });
     }
+  });
+
+  group("testing getDate function", () {
+    datesSample.forEach((date) {
+      DateTime? result = getTransactionDate(date['input']);
+      test("testing ${date['input']}", () {
+        expect(result, equals(date["output"]));
+      });
+    });
   });
 }

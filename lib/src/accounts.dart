@@ -62,6 +62,10 @@ AccountInfo getAccount(dynamic message) {
   if (account.number != null && account.number!.length > 4) {
     account.number = account.number!.substring(account.number!.length - 4);
   }
+  if (account.number != null &&
+      RegExp(r'[0-9]').allMatches(account.number!).isEmpty) {
+    account.number = null;
+  }
   return account;
 }
 
