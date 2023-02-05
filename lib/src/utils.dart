@@ -5,9 +5,11 @@ List<String> cleanMessages(List<String> messages) {
   RegExp transcationMessagePattern =
       RegExp(r'(?=.*credit|.*debit)(?=.*a/c)', caseSensitive: false);
   messages.forEach((message) {
-    Iterable<Match> matches = transcationMessagePattern.allMatches(message);
-    if (matches.isNotEmpty) {
-      newMessages.add(message);
+    if(message.isNotEmpty){
+      Iterable<Match> matches = transcationMessagePattern.allMatches(message);
+      if (matches.isNotEmpty) {
+        newMessages.add(message);
+      }
     }
   });
   return newMessages;
