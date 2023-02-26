@@ -18,6 +18,7 @@ void main() async {
         expect(result['transactionAmt'], equals(element["transactionAmt"]));
         expect(result['transactionType'], equals(element["transactionType"]));
         expect(result['transactionDate'], equals(element["transactionDate"]));
+        expect(result['bankName'], equals(element["bankName"]));
       });
     }
   });

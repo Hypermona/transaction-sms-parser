@@ -95,12 +95,7 @@ getTransactionInfo(String message) {
         keyWordType: BalanceKeyWordsType.OUTSTANDING);
   }
   DateTime? transactionDate = getTransactionDate(message);
-  // return {
-  //   account,
-  //   balance,
-  //   transactionAmount,
-  //   transactionType,
-  // };
+
   return {
     "accountName": account.name,
     "accountNumber": account.number,
@@ -109,5 +104,6 @@ getTransactionInfo(String message) {
     "transactionAmt": transactionAmount,
     "transactionType": transactionType,
     "transactionDate": transactionDate,
+    "bankName":getBankName(message)
   };
 }

@@ -95,3 +95,11 @@ AccountInfo getCard(List<String> processedMessage) {
   }
   return AccountInfo(type: null, number: null, name: null);
 }
+
+String getBankName(String message) {
+  RegExp chekBankName = RegExp(r'(([^-]*)$)', caseSensitive: false);
+  RegExpMatch? checkMatch = chekBankName.firstMatch(message);
+  RegExp verifyBankName = RegExp(r'^([^0-9]*)$', caseSensitive: false);
+  RegExpMatch? verifyMatch = verifyBankName.firstMatch(checkMatch![0]!);
+  return verifyMatch?[0]?.toString().trim().replaceAll(RegExp(r'\u00A0'), " ") ?? "BNF";
+}
